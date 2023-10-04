@@ -1,0 +1,3 @@
+interface Treinamento {
+    void treinarParaExame();
+}
