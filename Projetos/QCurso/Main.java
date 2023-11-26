@@ -21,7 +21,8 @@ public class Main{
         String emailDigitado;
         String senhaDigitada;
         boolean flag = true;
-        boolean flag1 = false;
+        boolean flasair;
+        flasair = true;
         boolean flag2 = false;
         try {
             if(gerenteDAO.verificarRegistros()){
@@ -60,11 +61,12 @@ public class Main{
                                     System.out.println("Credenciais inválidas. Tente novamente.");
                                 } else {
                                     System.out.println("Login bem-sucedido. Bem-vindo, " + alunoDAO.validarCredenciais(emailDigitado, senhaDigitada).getNome());
-                                    flag1 = true;
-                                    while (flag1) {
+                                    boolean flag1a;
+                                    flag1a = true;
+                                    while (flag1a) {
                                         System.out.println("--- MENU ---");
                                         System.out.println("1 - Se Inscrever em um Curso");
-                                        System.out.println("2 - Ver Cursos Inscritos");
+                                        System.out.println("2 - Mostrar Cursos Disponiveis");
                                         System.out.println("3 - Editar Perfil");
                                         System.out.println("4 - Deletar Conta");
                                         System.out.println("5 - Sair");
@@ -83,10 +85,10 @@ public class Main{
                                                 break;
                                             case 4:
                                                 alunoDAO.deleterUser(emailDigitado);
-                                                flag1 = false;
+                                                flag1a = false;
                                                 break;
                                             case 5:
-                                                flag1 = false;
+                                                flag1a = false;
                                                 break;
                                             default:
                                                 System.out.println("Entre com uma opção válida");
@@ -142,9 +144,9 @@ public class Main{
                                     System.out.println("Credencias invalidas. Tente Novamente");
                                 }else{
                                     System.out.println("Login bem-sucedido. Bem-Vindo, " + professorDAO.validarCredenciais(emailDigitado,senhaDigitada).getNome());
-                                    flag = false;
-                                    flag1 = true;
-                                    while (flag1){
+                                    boolean flag1p;
+                                    flag1p = true;
+                                    while (flag1p){
                                         System.out.println("--- MENU ---");
                                         System.out.println("1 - Inscrever em um curso");
                                         System.out.println("2 - Mostrar curso cadastrado");
@@ -163,7 +165,7 @@ public class Main{
                                                 professorDAO.deleterUser(emailDigitado);
                                                 break;
                                             case 4:
-                                                flag1 = false;
+                                                flag1p = false;
                                                 break;
                                             default:
                                                 System.out.println("Entre com uma opção válida");
@@ -222,19 +224,17 @@ public class Main{
                                     System.out.println("Credenciais inválidas. Tente novamente.");
                                 } else{
                                     System.out.println("Login bem-sucedido. Bem-vindo, " + gerenteDAO.validarCredenciais(emailDigitado, senhaDigitada).getNome());
-                                    flag = false;
-                                    flag1 = true;
-                                    while (flag1) {
+                                    while (flasair) {
                                         System.out.println("--- MENU ---");
-                                        System.out.println("1 - adicionar aluno");
-                                        System.out.println("2 - Ver todos os alunos cadastrados");
-                                        System.out.println("3 - Gerenciar conta de Aluno em questão");
-                                        System.out.println("4 - Adicionar Curso");
-                                        System.out.println("5 - Ver lista de Cursos");
-                                        System.out.println("6 - Adicionar Professor:");
-                                        System.out.println("7 - Ver lista de Professores");
-                                        System.out.println("8 - Gerenciar conta de Professor em questão:");
-                                        System.out.println("9 - Editar Perfil");
+                                        System.out.println(" 1 - adicionar aluno");
+                                        System.out.println(" 2 - Ver todos os alunos cadastrados");
+                                        System.out.println(" 3 - Gerenciar conta de Aluno em questão");
+                                        System.out.println(" 4 - Adicionar Curso");
+                                        System.out.println(" 5 - Ver lista de Cursos");
+                                        System.out.println(" 6 - Adicionar Professor");
+                                        System.out.println(" 7 - Ver lista de Professores");
+                                        System.out.println(" 8 - Gerenciar conta de Professor em questão");
+                                        System.out.println(" 9 - Editar Perfil");
                                         System.out.println("10 - Deletar Conta");
                                         System.out.println("11 - Sair");
                                         int ip = sc.nextInt();
@@ -318,7 +318,7 @@ public class Main{
                                                                 alunoDAO.deleterUser(emailDigitado);
                                                                 break;
                                                             case 5:
-                                                                flag1 = false;
+                                                                flag1g2 = false;
                                                                 break;
                                                             default:
                                                                 System.out.println("Entre com uma opção válida");
@@ -337,7 +337,7 @@ public class Main{
                                                 descricao = sc.nextLine();
                                                 System.out.println("Entre com a duração do curso em meses: ");
                                                 int tempo = sc.nextInt();
-                                                System.out.println("Entere com o id do cuso (lembrese id pode ser um valor numero de 1 - 100");
+                                                System.out.println("Entre com o id do curso (lembrese id pode ser um valor numero de 1 - 100)");
                                                 int id = sc.nextInt();
                                                 Curso c1 = new Curso(nomec,descricao,tempo,0, id);
                                                 gerenteDAO.AdicionarCurso(c1);
@@ -395,9 +395,9 @@ public class Main{
                                                     System.out.println("Credencias invalidas. Tente Novamente");
                                                 }else{
                                                     System.out.println("Login bem-sucedido. Bem-Vindo, " + professorDAO.validarCredenciais(emailDigitado,senhaDigitada).getNome());
-                                                    boolean flag1g;
-                                                    flag1g = true;
-                                                    while (flag1g){
+                                                    boolean flagProfessor;
+                                                    flagProfessor = true;
+                                                    while (flagProfessor){
                                                         System.out.println("--- MENU ---");
                                                         System.out.println("1 - Deletar Conta");
                                                         System.out.println("2 - Sair");
@@ -408,7 +408,6 @@ public class Main{
                                                                 professorDAO.deleterUser(emailDigitado);
                                                                 break;
                                                             case 2:
-                                                                flag1g = false;
                                                                 break;
                                                             default:
                                                                 System.out.println("Entre com uma opção válida");
@@ -425,7 +424,7 @@ public class Main{
                                                 gerenteDAO.deleterUser(emailDigitado);
                                                 break;
                                             case 11:
-                                                flag1 = false;
+                                                flasair = false;
                                                 break;
                                             default:
                                                 System.out.println("Entre com uma opção válida");
@@ -433,6 +432,7 @@ public class Main{
                                         }
                                     }
                                 }
+                                break;
                             case 6:
                                 flag = false;
                                 break;
@@ -473,6 +473,5 @@ public class Main{
         }catch(Exception e){
             e.printStackTrace();
         }
-
     }
 }
