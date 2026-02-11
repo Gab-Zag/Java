@@ -1,28 +1,23 @@
 import java.util.Scanner;
 
-public class Main {
-    public static void main(String[] args) {
-        int x;
-        int ano = 0;
-        int mes = 0;
-        int dia = 0;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
 
-        Scanner len = new Scanner(System.in);
+        int d;
+        int m = 0 ;
+        int a = 0;
 
-        x = len.nextInt();
+        d = sc.nextInt();
 
-        while (x >= 365){
-            ano++;
-            x = x - 365;
+        while(d >= 365){
+            a++;
+            d-= 365;
         }
-
-        while (x >= 30){
-            mes++;
-            x = x - 30;
+        while (d >= 30){
+            m++;
+            d-=30;
         }
-
-        System.out.println(ano + " ano(s)");
-        System.out.println(mes + " mes(es)");
-        System.out.println(x + " dia(s)");
+        System.out.println(a + " ano(s)\n" + m + " mes(es)\n" + d + " dia(s)");
     }
 }
